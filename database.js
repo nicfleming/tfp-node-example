@@ -19,8 +19,8 @@ function initMongoConnection() {
 
   const db = mongoose.connection;
 
-  db.on('error', function() {
-    console.error('Connection error:') }
+  db.on('error', function(err) {
+    console.error('Connection error:', err) }
   );
 
   db.once('open', function() {

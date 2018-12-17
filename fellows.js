@@ -87,7 +87,7 @@ function editFellow(req, res) {
   const id = req.params.id;
   const newData = req.body;
 
-  return Fellow.findOneAndUpdate({ _id: id }, newData)
+  return Fellow.findOneAndUpdate({ _id: id }, newData, { new: true })
     .exec()
     .then(dbFellow => res.json(dbFellow.toObject()))
     .catch(handleError.bind(res));
