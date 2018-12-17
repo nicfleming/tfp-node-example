@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "6a4f2e03-1d1b-42d3-aa08-caeb7725ee0c",
+		"name": "Fellows API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Multiple",
+			"item": [
+				{
+					"name": "Get All Fellows",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/fellows/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"fellows",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Single",
+			"item": [
+				{
+					"name": "Create One Fellow",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Taylor\",\n\t\"favoriteInstructor\": \"Chanel\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/fellows/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"fellows",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve One Fellow",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/fellows/5c181907583bfe45cdaab53f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"fellows",
+								"5c181907583bfe45cdaab53f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update One Fellow",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Taylor\",\n\t\"favoriteInstructor\": \"Chanel\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/fellows/5c181907583bfe45cdaab53f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"fellows",
+								"5c181907583bfe45cdaab53f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete One Fellow",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/fellows/5c181907583bfe45cdaab53f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"fellows",
+								"5c181907583bfe45cdaab53f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
