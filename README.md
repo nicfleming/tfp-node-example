@@ -6,3 +6,9 @@ Run the following
 $ npm install
 $ MONGO_URL=mongodb://localhost/node-app npm run start
 ```
+
+Or do
+
+```bash
+$ npm run start:simple
+```
