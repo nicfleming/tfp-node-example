@@ -37,6 +37,14 @@ const fellowSchema = new mongoose.Schema({
 // Step 2: Define the Model
 const Fellow = mongoose.model('Fellow', fellowSchema);
 
+// Adding schema for Instructor
+const instructorSchema = new mongoose.Schema({
+  name: String,
+  favoriteColor
+});
+
+// Define instructor model
+const Instructor = mongoose.model('Instructor', instructorSchema);
 
 /**
  * Exporting an object of properties!
@@ -44,4 +52,4 @@ const Fellow = mongoose.model('Fellow', fellowSchema);
  * You can import one of these using destructuring:
  * e.g. const { initMongoConnection } = require('./database');
  **/
-module.exports = { Fellow, initMongoConnection }
+module.exports = { Fellow, Instructor, initMongoConnection }

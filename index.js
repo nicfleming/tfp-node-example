@@ -8,6 +8,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const database = require("./database");
 const initFellows = require("./fellows");
+const initInstructors = require("./instructors");
 const { logEndpointHits } = require('./errors');
 const port = 3000;
 const app = express();
@@ -37,3 +38,4 @@ database.initMongoConnection();
 
 // Attach fellows endpoints
 initFellows(app);
+initInstructors(app);
