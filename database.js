@@ -31,7 +31,7 @@ function initMongoConnection() {
 // Step 1: Define the schema for the model
 const fellowSchema = new mongoose.Schema({
   name: String,
-  favoriteInstructor: String
+  favoriteInstructor: { type: mongoose.Schema.Types.ObjectId, ref: 'Instructor' }
 });
 
 // Step 2: Define the Model
@@ -40,7 +40,7 @@ const Fellow = mongoose.model('Fellow', fellowSchema);
 // Adding schema for Instructor
 const instructorSchema = new mongoose.Schema({
   name: String,
-  favoriteColor
+  favoriteColor: String
 });
 
 // Define instructor model
