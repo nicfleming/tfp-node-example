@@ -109,6 +109,17 @@ function deleteOneFellow(req, res) {
     .catch(handleError.bind(res));
 }
 
+function favoriteNewInstructor(req, res) {
+  const fellowId = req.params.fellowId;
+
+  if (Fellow.getOneFellow({_id: fellowId}) != null){
+    // TODO: is this the right way to check if the fellow exists?
+    // should i do some kind of .exec.catch thing?
+    // then create instructor and assign id of new instructor to fellow
+    // successful response is modified fellow object
+  }
+}
+
 
 /**
  * Initialize Fellows
@@ -120,6 +131,8 @@ function initFellows(app) {
   app.get("/fellows", getAllFellows);
   app.get("/fellows/:id", getOneFellow);
   app.delete("/fellows/:id", deleteOneFellow);
+  app.post("/fellows/:fellowId/favoriteNewInstructor", favoriteNewInstructor);
+
 }
 
 // const fellows = [
