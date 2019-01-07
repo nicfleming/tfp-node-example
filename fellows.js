@@ -112,12 +112,19 @@ function deleteOneFellow(req, res) {
 function favoriteNewInstructor(req, res) {
   const fellowId = req.params.fellowId;
 
-  if (Fellow.getOneFellow({_id: fellowId}) != null){
-    // TODO: is this the right way to check if the fellow exists?
-    // should i do some kind of .exec.catch thing?
-    // then create instructor and assign id of new instructor to fellow
-    // successful response is modified fellow object
-  }
+  return Fellow.getOneFellow({_id: fellowId})
+    .populate('favoriteInstructor')
+    .exec()
+    .then(dbFellow => res.json(dbFellow.toObject()))
+    .catch(handleError.bind(res));
+  // if (Fellow.getOneFellow({_id: fellowId}) != null){
+  //   // TODO: is this the right way to check if the fellow exists?
+  //   // should i do some kind of .exec.catch thing?
+  //   // then create instructor and assign id of new instructor to fellow
+  //   // successful response is modified fellow object
+
+
+  // }
 }
 
 
