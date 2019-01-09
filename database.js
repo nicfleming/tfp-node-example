@@ -10,12 +10,13 @@ const mongoose = require('mongoose');
  *  Build a connection to the mongo db.
  **/
 function initMongoConnection() {
-  if (typeof process.env.MONGO_URL === 'undefined') {
-    console.error('MONGO_URL ENV var not set.');
-    process.exit(0);
-  }
+  // if (typeof process.env.MONGO_URL === 'undefined') {
+  //   console.error('MONGO_URL ENV var not set.');
+  //   process.exit(0);
+  // }
+  const mongoURL = process.env.MONGO_URL || "mongodb://localhost/node-app";
 
-  mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
+  mongoose.connect(mongoURL, { useNewUrlParser: true });
 
   const db = mongoose.connection;
 

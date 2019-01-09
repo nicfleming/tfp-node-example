@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 const mongodb_url = "mongob://localhost/node-app-test";
+MONGO_URL="mongodb://localhost/node-app-test";
 
 // Step 1 - Connect to mongodb using mongoose;
 mongoose

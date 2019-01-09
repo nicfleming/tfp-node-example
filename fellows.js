@@ -117,7 +117,8 @@ function favoriteNewInstructor(req, res) {
     .exec()
     .then(dbFellow => res.json(dbFellow.toObject()))
     .catch(handleError.bind(res));
-  // if (Fellow.getOneFellow({_id: fellowId}) != null){
+  
+    // if (Fellow.getOneFellow({_id: fellowId}) != null){
   //   // TODO: is this the right way to check if the fellow exists?
   //   // should i do some kind of .exec.catch thing?
   //   // then create instructor and assign id of new instructor to fellow
